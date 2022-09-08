@@ -1,0 +1,29 @@
+<h2>Editar task {{data.title}}</h2>
+
+<div>
+<form action="/edit/{{data.id}}" method="POST">
+
+    <input type="text" name="title" value="{{data.title}}" />
+    <br />
+    <input type="text" name="description" value="{{data.description}}" />
+    <br />
+    <input type="text" name="done" value="{{data.done}}" />
+    <br />
+
+    <input type="submit" value="Editar" />
+</form>
+
+   <form action="/delete/{{data.id}}" method="POST">
+        <input type="submit" value="Deletar" />
+    </form>
+
+<h2>Acrescentar Dono</h2>
+    <form action="/users/add" method="POST">
+    <input type="hidden" name="TaskId" value="{{data.id}}" />
+        <input type="text" name="nome" />
+        <br />
+        <input type="text" name="sobrenome" />
+        <br />
+        <input type="submit" value="Adicionar" />
+    </form>
+</div>
